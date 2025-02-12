@@ -76,9 +76,6 @@ python crew.py
 - Improve summarization techniques using advanced LLMs.
 - Integrate a UI for seamless interaction.
 
-## License
-This project is licensed under the MIT License. Feel free to contribute!
-
 ---
 
 Developed with ❤️ using CrewAI & Google Gemini.
