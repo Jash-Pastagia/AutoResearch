@@ -1,0 +1,7 @@
+python-dotenv
+langchain
+langchain_google_genai
+google-generativeai
+crewai
+load_dotenv
+crewai_tools
