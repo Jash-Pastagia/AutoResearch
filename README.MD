@@ -1,62 +1,84 @@
-# CrewAI-Project
- This project implements a Multi Agents Framework using Crew AI. Here, models will search on Google search data andd fetch the information and store in a particular file.
+# AutoResearch
 
+AutoResearch is a multi-agent research and writing framework powered by CrewAI. It leverages autonomous **Researcher** and **Writer** agents to analyze real-time tech trends using Google search data and Google Gemini AI for content generation.
 
+## Features
+
+- **Autonomous Research & Writing**: Agents fetch and process online information.
+- **Google Search Integration**: Utilizes SerperDev API for retrieving search data.
+- **AI-Powered Content Generation**: Uses Google Gemini AI for text synthesis.
+- **Automated Task Execution**: Agents collaborate to complete research and documentation tasks.
 
 ## Prerequisites
 
-Ensure the following software is installed:
+Ensure the following dependencies are installed:
 
-- **Python** (version 3.8 or higher)
+- **Python** (3.8 or higher)
 - **Git** (for cloning the repository)
-- An **API Key** for Google Generative AI and SerperDev
+- API Keys for:
+  - **Google Generative AI**
+  - **SerperDev** (Google Search API)
 
 ## Project Structure
 
 ```plaintext
-RAG PROJECT/
+AutoResearch/
 ├── venv/                     # Virtual environment
 ├── .env                      # Environment variables (API keys)
-├── agents.py                 # Multiple Agents defined 
-├── crew.py                   # Main logic for creating tasks, assigning agents, and triggering tasks
-├── tasks.py                  # Tasks is defined which will done by Agents
-├── tools.py                  # Tools for search data on google 
-├── new-blog-post.md         # Ouput of the model is stored here
-├── requirements.txt          # List of dependencies
+├── agents.py                 # Definition of Researcher & Writer agents
+├── crew.py                   # Main logic for task execution
+├── tasks.py                  # Task definitions for agents
+├── tools.py                  # Google search tools
+├── output/                   # Directory for generated research content
+├── requirements.txt          # Project dependencies
 ```
+
 ## Setup Instructions
 
-Follow these steps to set up and run the project on your local machine:
-
-### 1. Install Python
-- Download Python from the [official Python website](https://www.python.org/downloads/).
-- During installation, make sure to check the box **Add Python to PATH**.
-
-### 2. Clone the Repository
-- Open a terminal or command prompt.
-- Clone the repository using
-```terminal
-git clone https://github.com/your-username/crewai-project.git
-```
-- Navigate into the project folder:
-```terminal
-cd crewgooglegemini
-```
-### 3. Set up a Virtual Environment
-- Create a virtual environment to manage dependencies:
-bash
-```terminal
-python -m venv venv
-```
-- Activate the virtual environment:
--- On Windows:
-```terminal
-Python Virtual Envirnment
-.\\venv\\Scripts\\activate
-```
-- On macOS and Linux:
+### 1. Clone the Repository
 ```bash
-source venv/bin/activate
-```command in your terminal:
-  ```bash
-  python --version
+git clone https://github.com/your-username/AutoResearch.git
+cd AutoResearch
+```
+
+### 2. Set Up a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure API Keys
+- Create a `.env` file in the root directory.
+- Add your API keys in the following format:
+```ini
+GOOGLE_GEMINI_API_KEY=your_google_gemini_key
+SERPERDEV_API_KEY=your_serperdev_key
+```
+
+### 5. Run the Project
+```bash
+python crew.py
+```
+
+## Usage
+- The **Researcher Agent** fetches relevant data from Google.
+- The **Writer Agent** synthesizes and structures the content.
+- The output is saved in the `output/` directory as a Markdown file.
+
+## Future Enhancements
+- Expand search capabilities to include academic databases.
+- Improve summarization techniques using advanced LLMs.
+- Integrate a UI for seamless interaction.
+
+## License
+This project is licensed under the MIT License. Feel free to contribute!
+
+---
+
+Developed with ❤️ using CrewAI & Google Gemini.
